@@ -1,15 +1,31 @@
 {
   "name": "biblenotetakingapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "", 
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "mocha --exit"
   },
-  "author": "",
+  "author": "Justin Newby",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
-  }
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnewby91/bibleNoteTakingApp.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "bugs": {
+    "url": "https://github.com/jnewby91/bibleNoteTakingApp/issues"
+  },
+  "homepage": "https://github.com/jnewby91/bibleNoteTakingApp#readme",
+  "description": ""
 }
