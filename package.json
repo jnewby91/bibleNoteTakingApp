@@ -1,0 +1,15 @@
+{
+  "name": "biblenotetakingapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "", 
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
