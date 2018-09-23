@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy: https://serene-meadow-64584.herokuapp.com/
+  provider: heroku
+  api_key:
+    secure: KQ2hXrypwxJgYktnlvz4ZMPYzFEF7ArXojN3+j4szX4YdE+bTNB0cRTaWeRJuj8QCiDrpaPf5j4oDPXRjYSyPr5gIAO0MNxuHFCXxcha038GWYqFnO40uMCP/yzs8daf9+WGbRKiZemeEyi3gAsbQsSs9gDW1xKZW6R5pzGnYVt9g7N/NM2IVHL3UsGBx1fwpI6eC8syMRJsdv6DaKU8b0plB+xVX2hFNtNqDdFYhE66+Jr0ElpzZZnfqO1ak8DBzMq67FGmUthZhjQfJlP5ucSzkyXbrb8DaDJ7SV5GylDVzGJNlArrUoy00KRyaFTjIJs1+6xJrAJVN7iZSTpzK+FQHEG7SeA+kFMzLiKBNwJmXa6EoYW8+9+wdXhuoZZoRN5sVebYlRpHzt1ig0qZBN5uZF6cFdNLehdfAWkcprdAw8cMQDwv60onQyjUJMMoYzxRg70aTSd+o0B1EjdqFXiiynk9nmXDwIDoV9nw6m0m/hiMX8zAFl5PWJAzMtPwQ+fB5CLfEG+veYidGqZS8y9jeOlsXBp3N0TGmzH+SEOO8bhfTtm3oGznQxUsLUG4ooIVZ3eo6UFjccGz0oWfleFkwNuUEs+l7RUN0I1/y3CMHQMJpvSrqP2ys3sK4SnLJgWIpRHiz/U8/CDPUKgWNfOqZuf+6OoSzilhkLo4EME=
+  app: bibleNoteTakingApp
+  on:
+    repo: jnewby91/bibleNoteTakingApp
