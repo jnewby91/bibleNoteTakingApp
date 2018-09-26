@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header{
+    font-family: 'Homemade Apple', cursive;
+    border-bottom: 1px solid #000;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 80px; 
+}
+
+h1 {
+    display: inline;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 25px;
+}
+
+h2{
+    font-family: 'Homemade Apple', cursive;
+    text-decoration-line: underline;
+    line-height: 1.5px;
+    float: right;
+}
+
+li{
+    display: inline;
+    margin: 5px;
+}
+
+ul{
+    float:right;
+}
+
+.displayScripture {
+    line-height: 1.5;
+    margin: 50px auto;
+    padding: 50px;
+    width: 65%;
+    border: 1px solid #000;
+}
+
+.note_Form {
+    width: 70%;
+    border: 1px solid #000;
+    margin: 0 auto;
+    padding: 20px 0px 0px 50px;
+}
+
+.note_Form label {
+    display: block; 
+    
+}
+
+.my_notes {
+    width: 85%;
+    height: 500px;
+    border: 1px solid #000;
+    margin: 30px auto;
+    padding: 10px 10px 10px 20px;
+}
+
+table {
+    position: relative;
+    display: table;
+    margin: 70px auto 0px auto;
+    border-spacing: 50px 25px;
+}
+
+th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px 25px 8px 25px;
+}
+
+.more_notes {
+    /* bottom: -18px; */
+    position: relative;
+    top: 220px;
+    left: 250px;
+    font-size: 18px;
+    color: rgb(68, 139, 197);
+    /* margin: 0px 0px 0px 0px; */
+}
+
+p{
+    text-align: center;
+}
+
+
+
+
+
+
