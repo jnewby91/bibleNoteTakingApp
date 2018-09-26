@@ -14,6 +14,7 @@ header{
 }
 
 h1 {
+    font-family:  'Homemade Apple', cursive;
     display: inline;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 25px;
@@ -86,10 +87,95 @@ th {
     /* margin: 0px 0px 0px 0px; */
 }
 
+.sign_in {
+    height: 300px;
+    width: 20%;
+    border: 1px solid #000;
+    margin: 200px auto;
+    padding: 40px;
+}
+
+.sign_in label{
+    text-decoration-line: underline;
+    line-height: 1.5;
+}
+.sign_in  input{
+    
+    display: block;
+    width: 200px;
+    height: 20px;
+
+
+}
+
+form {
+    margin: 0px 0px 0px 50px;
+}
+
+.sign_in button {
+    /* margin: 0px auto; */
+    width: 96px;
+    height: 38px;
+    margin: 30px 0px 0px 20%;
+
+}
 p{
     text-align: center;
 }
 
+main{
+    width: 80%;
+    margin: 70px auto;
+}
+
+.information{
+    width: 100%; 
+    padding: 25px;
+}
+
+.information p {
+    line-height: 1.4;
+    padding: 0px;
+    margin: 50px 47px 0px auto;
+    width: 25%;
+    position: relative;
+}
+
+.information2{
+    width: 100%; 
+    padding: 25px;
+}
+
+.information2 p {
+    line-height: 1.4;
+    padding: 0px;
+    margin: 49px 47px 0px auto;
+    width: 25%;
+    float: left;
+    position: relative;
+}
+.information2 h2 {
+    float: left;
+    margin: 20px 20px 0px 40px;
+}
+.sampleImage2 {
+    float: right;
+    border: 1px solid #000;
+    width: 35%;
+    height: 200px;
+    margin: 0px 10px 0px 20px;
+}
+.sampleImage {
+    float: left;
+    border: 1px solid #000;
+    width: 35%;
+    height: 200px;
+    margin: 0px 10px 0px 20px;
+}
+.information h2 {
+    float: right;
+    margin: 20px 20px 0px 40px;
+}
 
 
 
