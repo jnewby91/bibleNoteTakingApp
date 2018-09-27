@@ -87,13 +87,25 @@ th {
     /* margin: 0px 0px 0px 0px; */
 }
 
-.sign_in {
-    height: 300px;
+.sign_up {
     width: 20%;
     border: 1px solid #000;
     margin: 200px auto;
     padding: 40px;
 }
+.sign_up label{
+    text-decoration-line: underline;
+    line-height: 1.5;
+}
+
+
+.sign_in {
+    width: 25%;
+    border: 1px solid #000;
+    margin: 200px auto;
+    padding: 40px;
+}
+
 
 .sign_in label{
     text-decoration-line: underline;
