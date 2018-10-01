@@ -6,6 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Open+Sans" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="app.js"></script>
         <title>My Notes</title>
     </head>
     <body>
@@ -21,12 +24,23 @@
         </header>
         <main>
             <div class="my_notes">
-                <h2>Username</h2>
-                <table>
-                    <th>Subject</th>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Public/Private</th>
+                <h2>Username: <span class="js_username"></span></h2>
+                <table class="js_rows">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Public/Private</th>
+                        <th>Delete Note</th>
+                    </tr>
+                    <!-- <span ></span> --> 
+                    <tr>
+                        <td><a href="">Something</a></td>
+                        <td>Something</td>
+                        <td>Something</td>
+                        <td>Something</td>
+                        <td><button>Delete</button></td>
+                    </tr>
                 </table>
                 <span class="more_notes"><a href="./create_note.html">Click here to add more notes</a>
             </span>

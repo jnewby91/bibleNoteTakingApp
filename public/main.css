@@ -124,6 +124,12 @@ th {
     margin: 70px;
 }
 
+.displayScripture h2, .note_Form h2{
+    float: none;
+    display: block;
+    margin: 0px 0px 25px 0px;
+    padding: 10px;
+}
 
 
 form {
@@ -141,8 +147,8 @@ p{
 }
 
 main {
-    width: 85%;
-    margin: 85px auto;
+    width: 70%;
+    margin: 0px auto;
     border: 1px solid black;
     padding: 41px;
 }
