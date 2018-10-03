@@ -15,6 +15,7 @@ const mongoose = require('mongoose');
    email:{
        type: String, 
        unique: true,
+       required: true,
        index: true
    } ,
    password: {
@@ -28,7 +29,7 @@ const mongoose = require('mongoose');
 //create notes schema 
 const noteSchema = mongoose.Schema({
     topic: {type: String, required: true},
-    userName:{type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
+    user:{type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
     passage: {
         book: String, 
         chapter: {type: String}, 
@@ -38,10 +39,10 @@ const noteSchema = mongoose.Schema({
     visibility: {type: String}
 });
 
-noteSchema.pre('findOne', function(next){ 
-    this.populate('name'); 
-    (next);
-});
+// noteSchema.pre('findOne', function(next){ 
+//     this.populate('name'); 
+//     (next);
+// });
 
 noteSchema.methods.serialize = function() {
     return {
