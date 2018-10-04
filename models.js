@@ -39,15 +39,26 @@ const noteSchema = mongoose.Schema({
     visibility: {type: String}
 });
 
-// noteSchema.pre('findOne', function(next){ 
-//     this.populate('name'); 
+// noteSchema.pre('find', function(next){ 
+//     this.populate('user'); 
 //     (next);
 // });
+
+// noteSchema.pre('findOne', function(next){ 
+//     this.populate('user'); 
+//     (next);
+// });
+
+noteSchema.virtual('usersName').get( function (){
+    return `${this.user.firstName} ${this.user.lastName}`;
+})
+
 
 noteSchema.methods.serialize = function() {
     return {
         id: this.id, 
         topic: this.topic, 
+        // user: this.usersName,
         passage: this.passage, 
         reflection: this.reflection,
         visibility: this.visibility
