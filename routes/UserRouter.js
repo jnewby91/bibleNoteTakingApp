@@ -60,14 +60,18 @@ router.post('/', (req, res) => {
     }
 
     User
-        .create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            userName: req.body.userName,
-            email: req.body.email,
-            password: req.body.password
+    .hashPassword(req.body.password)
+    .then(password => {
+        return User
+            .create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                userName: req.body.userName,
+                email: req.body.email,
+                password: password
         })
         .then(user => res.status(201).json(user.serialize()))
+    }) 
         .catch(err => {
             console.error(err);
             res.status(500).json({

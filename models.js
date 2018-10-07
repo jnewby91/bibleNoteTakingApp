@@ -1,6 +1,9 @@
 "use strict";
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+
+// mongoose.Promise = global.Promise;
 
 //create user Schema
  const userSchema = mongoose.Schema({
@@ -39,6 +42,7 @@ const noteSchema = mongoose.Schema({
     visibility: {type: String}
 });
 
+
 // noteSchema.pre('find', function(next){ 
 //     this.populate('user'); 
 //     (next);
@@ -49,9 +53,17 @@ const noteSchema = mongoose.Schema({
 //     (next);
 // });
 
-noteSchema.virtual('usersName').get( function (){
+noteSchema.virtual('usersName').get( function () {
     return `${this.user.firstName} ${this.user.lastName}`;
 })
+
+userSchema.methods.validatePassword = function(password) {
+    return bcrypt.compare(password, this.password);
+};
+  
+userSchema.statics.hashPassword = function(password) {
+    return bcrypt.hash(password, 10);
+};
 
 
 noteSchema.methods.serialize = function() {
@@ -70,8 +82,12 @@ userSchema.methods.serialize = function() {
         id: this.id, 
         userName: this.userName, 
         email: this.email
+
     }
 }
+
+
+
 
 const User = mongoose.model('User', userSchema);
 const Note = mongoose.model('Note', noteSchema);

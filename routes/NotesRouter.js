@@ -8,10 +8,11 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const {DATABASE_URL, PORT} = require('../config');
+const {jwtPassportMiddleware} =require('../auth/strategies')
 
 const {Note} = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/',  (req, res) => {
     Note
         .find()
         .then(notes => {
@@ -38,7 +39,7 @@ router.get('/:id', (req, res) => {
 
 })
 
-router.post('/', (req, res) => {
+router.post('/',  jwtPassportMiddleware, (req, res) => {
     const requiredFields = ['topic', 'user', 'passage', 'reflection', 'visibility'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
@@ -70,7 +71,7 @@ router.post('/', (req, res) => {
 //Ask Alex opinion on how PUT should be constructed. Should I have 
 //a parameter blocking if each user 
 
-router.put('/:id', (req, res) => {
+router.put('/:id', jwtPassportMiddleware, (req, res) => {
     if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
         res.status(400).json({
             error: 'Request path id and request body id values must match'
@@ -122,7 +123,7 @@ router.put('/:id', (req, res) => {
         })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', jwtPassportMiddleware, (req, res) => {
     Note
     .findByIdAndRemove(req.params.id)
     .then(()=> {

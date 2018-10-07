@@ -44,6 +44,11 @@ let MOCK_DATA = {
  }
 ]
 };
+
+
+const NOTES_URL = './'; 
+
+
 function getNotes(callbackFn){
     setTimeout(function (){
         callbackFn(MOCK_DATA) 
