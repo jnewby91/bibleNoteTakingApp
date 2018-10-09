@@ -46,13 +46,44 @@ let MOCK_DATA = {
 };
 
 
-const NOTES_URL = './'; 
+const NOTES_URL = 'http://localhost:8080/notes'; 
+const USERS_URL = 'http://localhost:8080/users';
+const AUTH_URL =  'http://localhost:8080/auth/login';
 
 
 function getNotes(callbackFn){
     setTimeout(function (){
         callbackFn(MOCK_DATA) 
     }, 100);
+}
+
+
+//When a user clicks on the submit button. An AJAX call is made to 
+//authentication URL  
+//  1. Make a function that takes values from inputs and turns them into variables.
+//  2. Use variables to create an AJAX call to authentication URL
+//  3.
+
+function logintoSite(){
+    $('.sign_in form').submit(function(){
+        console.log('I hear you');
+        event.preventDefault();
+        const user = $('form').find('#signIn_userName').val();
+        const pass=$('form').find('#signIn_password').val();
+        console.log(user);
+        console.log(pass);
+        $.ajax({
+            method: "POST",
+            url: AUTH_URL,
+            data: {username: user, password: pass },
+        })
+
+    });
+}
+
+function getInputValue(destination){
+    $('form').find(destination).val();
+    console.log(destination);
 }
 
 
@@ -84,6 +115,7 @@ function getNotesandDisplay(){
 
 $(function() {
     getNotesandDisplay();
+    logintoSite();
 })
 
 

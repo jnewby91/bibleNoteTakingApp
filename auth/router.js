@@ -18,14 +18,13 @@ function createJwtToken(user) {
 }
 
 authRouter.post('/login', localPassportMiddleware, (req, res) => {
-    console.log(req.body.username);
     const user = req.user.serialize();
     const jwtToken = createJwtToken(user);
     res.json({ jwtToken, user });
 });
 
 authRouter.post('/refresh', jwtPassportMiddleware, (req, res) => {
-    const user = req.userName;
+    const user = req.user;
     const jwtToken = createJwtToken(user);
     res.json({ jwtToken, user });
 });
