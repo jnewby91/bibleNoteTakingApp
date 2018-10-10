@@ -18,6 +18,7 @@ function createJwtToken(user) {
 }
 
 authRouter.post('/login', localPassportMiddleware, (req, res) => {
+    console.log(req)
     const user = req.user.serialize();
     const jwtToken = createJwtToken(user);
     res.json({ jwtToken, user });

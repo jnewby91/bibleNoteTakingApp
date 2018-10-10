@@ -11,9 +11,9 @@ const { JWT_SECRET } = require('../config');
 
 // The LocalStrategy gets used while trying to access an Endpoint using a User + Password combination
 const localStrategy = new LocalStrategy((username, password, passportVerify) => {
+    console.log(username + password); 
     let user;
     // Step 1: Verify the username exists
-    console.log(username + password); 
 
     User.findOne({ userName: username }).then(_user => {
         user = _user;

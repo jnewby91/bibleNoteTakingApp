@@ -19,10 +19,7 @@ const notesRouter = require('./routes/NotesRouter');
 const authRouter= require('./auth/router');
 const {localStrategy, jwtStrategy} = require('./auth/strategies');
 
-app.use(passport.initialize());
-
-passport.use(localStrategy);
-passport.use(jwtStrategy);
+app.use(morgan('short'));
 
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -34,10 +31,14 @@ app.use(function(req, res, next) {
     next();
   });
 
+app.use(passport.initialize());
+
+passport.use(localStrategy);
+passport.use(jwtStrategy);
+
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
-app.use(morgan('short'));
 
 app.use("/users", userRouter);
 app.use("/notes",notesRouter);

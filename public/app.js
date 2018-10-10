@@ -64,6 +64,8 @@ function getNotes(callbackFn){
 //  2. Use variables to create an AJAX call to authentication URL
 //  3.
 
+
+
 function logintoSite(){
     $('.sign_in form').submit(function(){
         console.log('I hear you');
@@ -72,12 +74,24 @@ function logintoSite(){
         const pass=$('form').find('#signIn_password').val();
         console.log(user);
         console.log(pass);
-        $.ajax({
+        // $.post(AUTH_URL, JSON.stringify({username: 'jnewby12', password: 'something'}), function(data){
+        //     console.log(data);
+        // }
+
+            $.ajax({
+            dataType: 'json',
             method: "POST",
             url: AUTH_URL,
-            data: {username: user, password: pass },
+            contentType: "application/json", 
+            data: JSON.stringify({username: user, password: pass }),
+            error: function(a, b, c){
+                console.log(a,b,c)
+            },
+            success: function(data){
+                console.log(data);
+                localStorage.setItem('jwtToken', data.jwtToken);
+            }
         })
-
     });
 }
 
@@ -116,6 +130,10 @@ function getNotesandDisplay(){
 $(function() {
     getNotesandDisplay();
     logintoSite();
+    // $.get('http://localhost:8080/', function(data){
+    //     console.log(data);
+    // });
+    $('#enter').click();
 })
 
 
