@@ -39,7 +39,7 @@ const noteSchema = mongoose.Schema({
         verse: {type: String}
     },
     reflection: {type: String}, 
-    visibility: {type: boolean}
+    visibility: {type: String}
 });
 
 

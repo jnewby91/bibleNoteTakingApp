@@ -87,7 +87,7 @@ function logintoSite() {
             success: function (data) {
                 console.log(data);
                 localStorage.setItem('jwtToken', data.jwtToken);
-                $('html').load('./my_notes.html');
+                window.location = './my_notes.html';
             }
         })
     });
@@ -121,8 +121,7 @@ function signupForSite() {
             },
             success: function (data) {
                 console.log(data);
-                localStorage.setItem('jwtToken', data.jwtToken);
-                $('html').load('./my_notes.html');
+                window.location = './create_note.html' ;
             }
         })
 
