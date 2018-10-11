@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Open+Sans" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="app.js"></script>
         <title>Sign Up</title>
     </head>
     <body>
@@ -18,20 +20,23 @@
                     <li><a href="./sign_up.html">Sign-Up</a></li>
                 </ul>
             </header>
-        <div class="sign_in">
+        <div class="sign_up">
             <h1>Bible Note App</h1>
             <form action="">
                 <label for="email">Email </label>
-                <input type="email" name="signIn" id="">
+                <input type="email" name="signIn" id="signUpEmail">
+                <br>
+                <label for="userName">User Name </label>
+                <input type="text" name="signIn" id="userName">
                 <br>
                 <label for="firstName">First Name</label>
-                <input type="text" name="firstName" id="">
+                <input type="text" name="firstName" id="signUpFirstName">
                 <br>
                 <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" id="">
+                <input type="text" name="lastName" id="signUpLastName">
                 <br>
                 <label for="password">Password </label>
-                <input type="password" name="signIn" id="">
+                <input type="password" name="signIn" id="signUpPassword">
                 <br>
                 <button type="submit">Sign Up</button>
             </form>
