@@ -40,7 +40,8 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/',  jwtPassportMiddleware, (req, res) => {
-    const requiredFields = ['topic', 'user', 'passage', 'reflection', 'visibility'];
+    console.log(req.user);
+    const requiredFields = ['topic', 'passage', 'reflection', 'visibility'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
         if (!field in req.body) {
@@ -54,7 +55,7 @@ router.post('/',  jwtPassportMiddleware, (req, res) => {
         .create({
             topic: req.body.topic,
             passage: req.body.passage,
-            user: req.body.user,
+            user: req.user.id,
             reflection: req.body.reflection,
             visibility: req.body.visibility
         })

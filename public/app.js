@@ -43,17 +43,14 @@ let MOCK_DATA = {
     ]
 };
 
+const BASE_URL = window.location.origin;
 
-const NOTES_URL = 'http://localhost:8080/notes';
-const USERS_URL = 'http://localhost:8080/users';
-const AUTH_URL = 'http://localhost:8080/auth/login';
+const NOTES_URL = '/notes';
+const USERS_URL = '/users';
+const AUTH_URL = '/auth/login';
 
 
-function getNotes(callbackFn) {
-    setTimeout(function () {
-        callbackFn(MOCK_DATA)
-    }, 100);
-}
+
 
 
 //When a user clicks on the submit button. An AJAX call is made to 
@@ -75,7 +72,7 @@ function logintoSite() {
         $.ajax({
             dataType: 'json',
             method: "POST",
-            url: AUTH_URL,
+            url: BASE_URL + AUTH_URL,
             contentType: "application/json",
             data: JSON.stringify({
                 username: user,
@@ -107,7 +104,7 @@ function signupForSite() {
         $.ajax({
             dataType: 'json',
             method: "POST",
-            url: USERS_URL,
+            url:  BASE_URL + USERS_URL,
             contentType: "application/json",
             data: JSON.stringify({
                 email: email,
@@ -131,21 +128,23 @@ function signupForSite() {
 
 function createNotes() {
     $('.note_Form form').submit(function () {
+        event.preventDefault();
         const topic = $('form').find('#topic').val();
         const book = $('form').find('#book').val();
         const chapter = $('form').find('#chapter').val();
         const verse = $('form').find('#verse').val();
         const reflection = $('form').find('#topic').val();
+        const token = localStorage.getItem('jwtToken');
         /* Need to know how to pass in radio button values*/
 
         $.ajax({
             dataType: 'json',
+            headers: { Authorization: `Bearer ${token}`},
             method: "POST",
-            url: USERS_URL,
+            url:  BASE_URL + NOTES_URL,
             contentType: "application/json",
             data: JSON.stringify({
                 topic: topic,
-                //how to pass in id of user
                 passage: {
                     book: book,
                     chapter: chapter,
@@ -160,6 +159,7 @@ function createNotes() {
             },
             success: function (data) {
                 console.log(data);
+                window.location = './my_notes';
             }
         })
 
@@ -168,47 +168,73 @@ function createNotes() {
 
 }
 
+// function getNotesbyId(){
+//     $().load({})
+//     const token = localStorage.getItem('jwtToken'); 
+//     $.ajax({
+//         dataType: 'json',
+//             headers: { Authorization: `Bearer ${token}`},
+//             method: "GET",
+//             url:  BASE_URL + NOTES_URL,
+//             contentType: "application/json", 
+//             success: (data) => {
+//                 console.log(data);
+//                 // displayNotes(data); 
+//             }
+
+//     })
+
+// }
 
 
-function getInputValue(destination) {
-    $('form').find(destination).val();
-    console.log(destination);
-}
+// function getNotes(callbackFn) {
+//     setTimeout(function () {
+//         callbackFn(MOCK_DATA)
+//     }, 100);
+// }
 
 
 
-function displayNotes(data) {
-    $('.js_username').html(data.notes[0].userName);
 
-    for (let i = 0; i < data.notes.length; i++) {
-        $('.js_rows').append(`
-        <tr>
-            <td><a href="">${data.notes[i].topic}</a></td>
-            <td>${data.notes[i].dateCreated}</td>
-            <td>${data.notes[i].noteType}</td>
-            <td>${data.notes[i].visibility}</td>
-            <td><button>Delete</button></td>
-        </tr>
-
-    `)
-    };
-
-    // $('.js_rows').append()
-}
+// function getInputValue(destination) {
+//     $('form').find(destination).val();
+//     console.log(destination);
+// }
 
 
-function getNotesandDisplay() {
 
-    getNotes(displayNotes);
-    console.log('this ran');
-}
+// function displayNotes(data) {
+//     $('.js_username').html(data.notes[0].userName);
+
+//     for (let i = 0; i < data.notes.length; i++) {
+//         $('.js_rows').append(`
+//         <tr>
+//             <td><a href="">${data.notes[i].topic}</a></td>
+//             <td>${data.notes[i].dateCreated}</td>
+//             <td>${data.notes[i].noteType}</td>
+//             <td>${data.notes[i].visibility}</td>
+//             <td><button>Delete</button></td>
+//         </tr>
+
+//     `)
+//     };
+
+//     // $('.js_rows').append()
+// }
+
+
+// function getNotesandDisplay() {
+
+//     getNotes(displayNotes);
+//     console.log('this ran');
+// }
 
 $(function () {
-    getNotesandDisplay();
+    // getNotesandDisplay();
     logintoSite();
     // $.get('http://localhost:8080/', function(data){
     //     console.log(data);
     // });
     signupForSite();
-    $('#enter').click();
+    createNotes();
 })
