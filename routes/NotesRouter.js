@@ -12,10 +12,11 @@ const {jwtPassportMiddleware} =require('../auth/strategies')
 
 const {Note} = require('../models');
 
-router.get('/',  (req, res) => {
+router.get('/', jwtPassportMiddleware, (req, res) => {
     Note
-        .find()
+        .find({user:req.user.id}) 
         .then(notes => {
+            console.log(notes);
             res.json(notes.map(note => 
                 note.serialize()));
         })
@@ -25,7 +26,7 @@ router.get('/',  (req, res) => {
         });
 }); 
 
-router.get('/:id', (req, res) => {
+router.get('/:id', jwtPassportMiddleware, (req, res) => {
     Note
         .findById()
         .then(notes => {
@@ -33,7 +34,7 @@ router.get('/:id', (req, res) => {
                 note.serialize()));
         })
         .catch(err => {
-            console.err(err);
+            console.error(err);
             res.status(500).json({error: 'something went wrong'});
         })
 
