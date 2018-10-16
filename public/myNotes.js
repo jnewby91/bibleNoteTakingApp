@@ -25,24 +25,34 @@ function getNotesbyId(){
 }
 
 function displayNotes(data) {
-    // $('.js_username').html(data.notes[0].userName);
+    console.log(req);
+    $('.js_username').html(data.user);
 
     for (let i = 0; i < data.length; i++) {
         $('.js_rows').append(`
         <tr>
             <td><a href="./view_note.html?id=${data[i].id}">${data[i].topic}</a></td>
             <td>${data[i].dateCreated}</td>
-            <td>${data[i].passage}</td>
+            <td>${data[i].passage.book}</td>
             <td>${data[i].visibility}</td>
-            <td><button>Delete</button></td>
+            <td><button id="edit_button">Edi</button></td>
+            <td><button id="delete_button">Delete</button></td>
         </tr>
 
     `)
     };
 }
+function deleteNote(){
+    $('js_rows').click('#delete_button', function(event){
+        
+        let buttoniD = $(this).closest('td').val();
+        console.log(buttoniD);
+    })
+}
 
 $(function (){
     getNotesbyId();
+    deleteNote();
 })
 
 

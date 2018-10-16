@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Notes</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="view_note.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <h1>Bible Note App</h1>
+        <h1><a href="./index.html">Bible Note App</a></h1>
             <ul>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./my_notes.html">My Notes</a></li>
@@ -23,11 +23,17 @@
             </ul>
     </header>
     <main>
-        <div class = "my_notes">
-            <h2>Something</h2>
+        <div class = "view_notes">  
+            <h2><span class="js_topic">This is the Topic</span></h2> 
+            <h3 class="js_passage"> Bible Verse: <span class="js_book"></span> <span class="js_chapter">3</span>:<span class="js_verse">16</span></h3>
             <div class="js_information">
-
-
+            <h3>Reflection:</h3>
+                <p><span class="js_reflections">Lorem Ipsum is simply dummy 
+                    text of the printing and typesetting industry. Lorem Ipsum 
+                    has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown 
+                    printer took a galley of type and scrambled it to make 
+                    a type specimen book.</span></p>
             </div>
         </div>
     </main>

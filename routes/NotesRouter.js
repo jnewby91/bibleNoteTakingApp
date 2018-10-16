@@ -16,7 +16,7 @@ router.get('/', jwtPassportMiddleware, (req, res) => {
     Note
         .find({user:req.user.id}) 
         .then(notes => {
-            console.log(notes);
+            // console.log(notes);
             res.json(notes.map(note => 
                 note.serialize()));
         })
@@ -28,11 +28,11 @@ router.get('/', jwtPassportMiddleware, (req, res) => {
 
 router.get('/:id', jwtPassportMiddleware, (req, res) => {
     Note
-        .findById()
+        .findById(req.params.id)
         .then(notes => {
-            res.json(notes.map(note => 
-                note.serialize()));
-        })
+            console.log('it ran this: ' + notes);
+            res.json(
+                notes.serialize())})
         .catch(err => {
             console.error(err);
             res.status(500).json({error: 'something went wrong'});

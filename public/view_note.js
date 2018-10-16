@@ -21,24 +21,36 @@ function viewNote(){
     console.log('this is what params is:' + params );
 
     let notesId = params.get('id');
-    console.log(`${BASE_URL}${NOTES_URL}${notesId}`);
+    let newURL =`${BASE_URL}${NOTES_URL}${notesId}`;
 
     $.ajax({
         dataType: 'json',
         headers: { Authorization: `Bearer ${token}`},
         method: "GET",
         //how do I get the id of the user sent in
-        url: window.location.href,
+        url: newURL,
         contentType: "application/json", 
         success: (data) => {
             console.log(data);
             displayNotes(data);
             // displayNotes(data); 
-        }
-
-})
-
+         }
+    })
 }
+
+function displayNotes(data) {
+    $('.js_topic').html(`Topic: ${data.topic}`);
+    $('.js_book').html(data.passage.book);
+    $('.js_chapter').html(data.passage.chapter);
+    $('.js_verse').html(data.passage.verse); 
+    $('.js_reflections').html(data.reflection)
+ }
+ 
+
+    // $('.js_rows').append()
+
+
+
 
 $(function(){
     viewNote();
