@@ -65,9 +65,11 @@ h3{
 
 }
 
-li{
+li {
+    font-size: medium;
     display: inline;
     margin: 5px;
+    padding: 5px;
 }
 
 a {
@@ -80,9 +82,8 @@ a:hover{
 }
 
 ul {
-    float: right;
-    font-family: sans-serif;
-    margin: 27px 40px auto auto;
+    text-align: right;
+    margin: 15px 40px 0px 0px;
 }
 .displayScripture {
     line-height: 1.5;
@@ -204,6 +205,8 @@ main {
 .information{
     width: 100%; 
     padding: 25px;
+    border-bottom: 1px solid silver;
+
 }
 
 .information p {
