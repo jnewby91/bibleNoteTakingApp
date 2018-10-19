@@ -7,24 +7,35 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const {DATABASE_URL, PORT} = require('../config');
-const {jwtPassportMiddleware} =require('../auth/strategies')
+const {
+    DATABASE_URL,
+    PORT
+} = require('../config');
+const {
+    jwtPassportMiddleware
+} = require('../auth/strategies')
 
-const {Note} = require('../models');
+const {
+    Note
+} = require('../models');
 
 router.get('/', jwtPassportMiddleware, (req, res) => {
     Note
-        .find({user:req.user.id}) 
+        .find({
+            user: req.user.id
+        })
         .then(notes => {
             // console.log(notes);
-            res.json(notes.map(note => 
+            res.json(notes.map(note =>
                 note.serialize()));
         })
         .catch(err => {
-            console.error(err); 
-            res.status(500).json({error: 'something went wrong'});
+            console.error(err);
+            res.status(500).json({
+                error: 'something went wrong'
+            });
         });
-}); 
+});
 
 router.get('/:id', jwtPassportMiddleware, (req, res) => {
     Note
@@ -32,15 +43,18 @@ router.get('/:id', jwtPassportMiddleware, (req, res) => {
         .then(notes => {
             console.log('it ran this: ' + notes);
             res.json(
-                notes.serialize())})
+                notes.serialize())
+        })
         .catch(err => {
             console.error(err);
-            res.status(500).json({error: 'something went wrong'});
+            res.status(500).json({
+                error: 'something went wrong'
+            });
         })
 
 })
 
-router.post('/',  jwtPassportMiddleware, (req, res) => {
+router.post('/', jwtPassportMiddleware, (req, res) => {
     console.log(req.user);
     const requiredFields = ['topic', 'passage', 'reflection', 'visibility'];
     for (let i = 0; i < requiredFields.length; i++) {
@@ -77,61 +91,49 @@ router.put('/:id', jwtPassportMiddleware, (req, res) => {
     if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
         res.status(400).json({
             error: 'Request path id and request body id values must match'
-        });
+        })
+
+        return 
     }
 
     const updated = {};
-    const updatedFields = ['topic', 'reflection', 'passage', 'user', 'visibility'];
+    const updatedFields = ['topic', 'reflection', 'passage'];
     updatedFields.forEach(field => {
         if (field in req.body) {
             updated[field] = req.body[field];
         }
     });
-
     return Note
-        .findOne({
-            user: updated.user
+        .findByIdAndUpdate(req.params.id, {
+            $set: updated
+        }, {
+            new: true
         })
         .then(note => {
-            if (note) {
-                const message = "topic name already taken";
-                console.error(message);
-                return res.status(400).send(message);
-            } else {
-                return User
-                    .findByIdAndUpdate(req.params.id, {
-                        $set: updated
-                    }, {
-                        new: true
-                    })
-                //ask alex what trueugfb reqpresents 
-            }
-
-        })
-        .then(note => {
+            console.log('In here:', note);
             res.status(201).json({
                 id: note._id,
                 topic: note.topic,
                 user: note.user,
-                reflection: note.reflection, 
+                reflection: note.reflection,
                 passage: note.passage,
-                visibility: note.visibility
-
             })
         })
         .catch(err => {
             console.error(err);
-            res.status(500).json({error: 'Something Went Wrong'});
+            res.status(500).json({
+                error: 'Something Went Wrong'
+            });
         })
 })
 
 router.delete('/:id', jwtPassportMiddleware, (req, res) => {
     Note
-    .findByIdAndRemove(req.params.id)
-    .then(()=> {
-        console.log(`Deleted note with the id of ${req.params.id} `);
-        res.status(204).end(); 
-    })
+        .findByIdAndRemove(req.params.id)
+        .then(() => {
+            console.log(`Deleted note with the id of ${req.params.id} `);
+            res.status(204).end();
+        })
 });
 
-module.exports = router; 
+module.exports = router;

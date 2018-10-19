@@ -6,7 +6,6 @@ const USERS_URL = '/users';
 
 function getNotesbyId(){
     const token = localStorage.getItem('jwtToken');
-    console.log(token); 
     $.ajax({
             dataType: 'json',
             headers: { Authorization: `Bearer ${token}`},
@@ -35,13 +34,22 @@ function displayNotes(data) {
             <td>${data[i].dateCreated}</td>
             <td>${data[i].passage.book}</td>
             <td>${data[i].visibility}</td>
-            <td><button id="edit_button">Edit</button></td>
+            <td><button id="edit_button" data-edit=${data[i].id}>Edit</button></td>
             <td><button id="delete_button" data-note=${data[i].id}>Delete</button></td>
         </tr>
 
     `)
     };
 }
+
+function editNotes(){
+    $('.js_rows').on('click', '#edit_button', function(event){
+        let buttoniD = $(event.target).data('edit');
+        console.log(`${BASE_URL}${NOTES_URL}/${buttoniD}`);
+        window.location = `${BASE_URL}/edit_note.html?id=${buttoniD}`;
+    });
+}
+
 function deleteNote(){
     $('.js_rows').on('click','#delete_button', function(event){
         console.dir(event); 
@@ -77,6 +85,7 @@ function deleteNote(){
 $(function (){
     getNotesbyId();
     deleteNote();
+    editNotes();
 })
 
 
