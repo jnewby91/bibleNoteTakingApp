@@ -124,55 +124,54 @@ describe('BibleNotes API for Users', function () {
 
             return chai.request(app)
                 .post('/users')
-                .then(newUser)
+                .send(newUser)
                 .then( function (res){
                     expect(res).to.have.status(201); 
                     expect(res).to.be.json;
                     expect(res.body).to.be.a('object'); 
-                    expect(res.body).to.include.keys('firstName', 'lastName', 'userName', 'email', 'password'); 
+                    expect(res.body).to.include.keys('userName', 'email'); 
                     expect(res.body.id).to.not.be.null;
                     return User.findById(res.body.id)
                 })
 
                 .then(function (user) {
-                    expect(user.firstName).to.equal(User.firstName);
-                    expect(user.lastName).to.equal(User.lastName);
-                    expect(user.userName).to.equal(User.userName); 
-                    expect(user.email).to.equal(User.email); 
+                    expect(user.userName).to.equal(newUser.userName); 
+                    expect(user.email).to.equal(newUser.email); 
                 })
         })
     })
 
-//     describe('PUT endpoint', function () {
-//         it('should update User information', function (){
-//             const updateData = {
-//                 email: 'sallymaine@mailinator.com',
-//                 userName: 'smaine20',
-//                 password: 'constant'
-//             };
+    describe('PUT endpoint', function () {
+        it('should update User information', function (){
+            const updateData = {
+                email: 'sallymaine@mailinator.com',
+                userName: 'smaine20',
+                // password: 'constant'
+            };
 
-//             return User
-//             .findOne()
-//             .then(function (user) {
-//                 updateData.id = user.id; 
+            return User
+            .findOne()
+            .then(function (user) {
+                updateData.id = user.id; 
+                console.log(updateData.id);
 
-//                 return chai.request(app)
-//                 .put(`/users/${user.id}`)
-//                 .send(updateData);
-//             })
-//             .then(function (res) {
-//                 expect(res).to.have.status(204); 
+                return chai.request(app)
+                    .put(`/users/${user.id}`)
+                    .send(updateData);
+            })
+            .then(function (res) {
+                expect(res).to.have.status(200); 
 
-//                 return User.findById(updateData.id); 
+                return User.findById(updateData.id); 
 
-//             })
-//             .then(function (user) {
-//                 expect(user.email).to.equal(updateData.email);
-//                 expect(user.userName).to.equal(updateData.userName); 
-//                 expect(user.password).to.equal(updateData.password);
-//             })
-//         })
-//     })
+            })
+            .then(function (user) {
+                expect(user.email).to.equal(updateData.email);
+                expect(user.userName).to.equal(updateData.userName); 
+                // expect(user.password).to.equal(updateData.password);
+            })
+        })
+    })
 
 })
 
