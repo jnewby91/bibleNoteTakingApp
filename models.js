@@ -57,14 +57,14 @@ noteSchema.virtual('usersName').get( function () {
     return `${this.user.firstName} ${this.user.lastName}`;
 })
 
-userSchema.methods.validatePassword = function(password) {
-    return bcrypt.compare(password, this.password);
-};
   
-userSchema.statics.hashPassword = function(password) {
+userSchema.statics.hashPassword = function (password) {
     return bcrypt.hash(password, 10);
 };
 
+userSchema.methods.validatePassword = function(password) {
+    return bcrypt.compare(password, this.password);
+};
 
 noteSchema.methods.serialize = function() {
     return {
