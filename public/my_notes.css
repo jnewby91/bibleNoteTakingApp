@@ -52,11 +52,11 @@ h1 {
     background-position: center;
     background-size: cover;
 }
-h2{
+h2 {
     font-family: 'Cinzel', serif;
     text-shadow: 0px 0.2px;
     /* text-decoration-line: underline; */
-    text-align: center;
+    text-align: right;
     line-height: 1.5px;
     /* float: right; */
 }
@@ -106,8 +106,8 @@ ul {
 }
 
 .my_notes {
-    width: 55%;
-    height: 500px;
+    width: max-content;
+    height: min-content;
     margin: 30px auto;
     /* padding: 10px 10px 10px 20px; */
 }
@@ -195,7 +195,7 @@ p{
 
 main {
     background-color: white;
-    width: 65%;
+    width: 80%;
     margin: 20px auto;
     padding: 10px;
 }

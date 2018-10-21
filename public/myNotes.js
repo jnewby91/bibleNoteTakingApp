@@ -31,9 +31,8 @@ function displayNotes(data) {
         $('.js_rows').append(`
         <tr class ='note_row'>
             <td><a href="./view_note.html?id=${data[i].id}">${data[i].topic}</a></td>
-            <td>${data[i].dateCreated}</td>
             <td>${data[i].passage.book}</td>
-            <td>${data[i].visibility}</td>
+            <td>${data[i].passage.chapter}:${data[i].passage.verse}</td>
             <td><button id="edit_button" data-edit=${data[i].id}>Edit</button></td>
             <td><button id="delete_button" data-note=${data[i].id}>Delete</button></td>
         </tr>

@@ -1,0 +1,85 @@
+body {
+    background-color: #192D2D;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    margin: 0px;
+    /* border-bottom: 1px solid #8B848C; */
+    /* height: 49px; */
+    /* padding: 0px; */
+    color: #59505b;
+    background-color: white;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    text-shadow: 0px 0.2px;
+    display: inline;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 75px;
+}
+
+ul {
+    text-align: right;
+    margin: 10px 40px 0px 0px;
+}
+
+li {
+    font-size: medium;
+    display: inline;
+    margin: 5px;
+    padding: 5px;
+}
+
+.sign_up {
+    width: 30%;
+    /* border: 1px solid #000; */
+    margin: 200px auto;
+    padding: 40px;
+    background-color: white;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    text-shadow: 0px 0.2px;
+    /* text-decoration-line: underline; */
+    text-align: center;
+    line-height: 1.5px;
+    /* float: right; */
+}
+
+form {
+    margin: 30px 0px 50px 85px;
+}
+
+.sign_up label {
+    /* text-decoration-line: underline; */
+    line-height: 1.5;
+    font-size: 22px;}
+
+input{
+    height: 30px;
+    width: 300px;
+}
+
+button{
+    margin: 30px 0px 0px 100px;
+    width: 100px;
+    height: 50px;
+}
+
+sign_up a {
+    color: black;
+    text-decoration: none;
+    /* text-align: center; */
+    margin: 0px 0px 0px 150px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="edit_note.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="edit_note.js"></script>
-    
+
     <title>Bible Note Taking App</title>
 </head>
 
 <body>
-    <header>
+    <header role="banner">
         <h1>Bible Note App</h1>
         <ul>
             <li><a href="">Home</a></li>
@@ -23,30 +25,27 @@
         </ul>
     </header>
 
-    <main>
+    <main role="main">
         <!-- <h2>Verse</h2> -->
         <!-- <div class="displayScripture">
         </div> -->
         <div class="note_Form">
             <h2> Create Note</h2>
-            <form action="">
-                    <label for="topic">Topic</label>
-                    <input type="text" name="note" id="topic" value="something" required> <br>
-                    <label for="Book">Book</label>
-                    <input type="text" name="note" id="book" value="something" required> <br>
-                    <label for="chapter">Chapter</label>
-                    <input type="text" name="note" id="chapter" value="something" required> <br>
-                    <label for="Verse">Verse</label>
-                    <input type="text" name="note" id="verse" value="1" required> <br>
-                    <label for="reflections">Reflections</label>
-                    <textarea name="note" id="reflections" cols="50" rows="10">Something</textarea>
-                    <label for="public_post">Public Post</label>
-                    <input type="radio" name="note" id="public_post">
-                    <label for="private_post">Private Post</label>
-                    <input type="radio" name="note" id="private_post" checked >
-                    <button type="submit">Make a Note</button>
+            <form role="form" action="">
+                <label for="topic">Topic</label>
+                <input type="text" name="note" id="topic" value="something" required> <br>
+                <label for="Book">Book</label>
+                <input type="text" name="note" id="book" value="something" required> <br>
+                <label for="chapter">Chapter</label>
+                <input type="text" name="note" id="chapter" value="something" required> <br>
+                <label for="Verse">Verse</label>
+                <input type="text" name="note" id="verse" value="1" required> <br>
+                <label for="reflections">Reflections</label>
+                <textarea name="note" id="reflections" cols="50" rows="10">Something</textarea>
+                <button type="submit">Make a Note</button>
             </form>
         </div>
     </main>
 </body>
+
 </html>
