@@ -7,10 +7,14 @@ body {
 }
 header {
     margin: 0px;
+    /* border-bottom: 1px solid #8B848C; */
+    /* height: 49px; */
+    /* padding: 0px; */
     color: #59505b;
     background-color: white;
     width: 100%;
 }
+
 
 h1 {
     font-family: 'Cinzel', serif;
@@ -20,16 +24,26 @@ h1 {
     padding: 0px 0px 0px 75px;
 }
 
+.image {
+    margin: 15px auto;
+    /* border: 1px solid #000; */
+    width: 95%;
+    height: 400px;
+    background-image: url(https://images.unsplash.com/photo-1443140570159-279cf334cf24?ixlib=rb-0.3.5…EyMDd9&s=9d90aef…&auto=format&fit=crop&w=1932&q=80);
+    background-position: center;
+    background-size: cover;
+}
 h2{
     font-family: 'Cinzel', serif;
     text-shadow: 0px 0.2px;
-    text-decoration-line: underline;
+    /* text-decoration-line: underline; */
     text-align: center;
     line-height: 1.5px;
     /* float: right; */
 }
 h3{
     margin: 50px 0px 50px 0px;
+
 }
 
 li {
@@ -62,7 +76,6 @@ ul {
 
 .note_Form {
     width: 70%;
-    /* border: 1px solid #000; */
     margin: 0 auto;
     padding: 20px 0px 0px 50px;
 }
