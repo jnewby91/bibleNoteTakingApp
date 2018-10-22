@@ -6,13 +6,19 @@ body {
     
 }
 header {
-    margin: 0px;
+    margin: 0px auto;
     /* border-bottom: 1px solid #8B848C; */
     /* height: 49px; */
     /* padding: 0px; */
     color: #59505b;
     background-color: white;
-    width: 100%;
+    width: 65%;
+}
+
+nav {
+    background-color: silver;
+    width: 65%;
+    margin: 0px auto;
 }
 
 /* header {
@@ -68,10 +74,10 @@ h3{
 }
 
 li {
-    font-size: medium;
+    font-size: 20px;
     display: inline;
-    margin: 5px;
-    padding: 5px;
+    margin: 30px;
+    padding: 0px;
 }
 
 a {
@@ -84,8 +90,8 @@ a:hover{
 }
 
 ul {
-    text-align: right;
-    margin: 10px 40px 0px 0px;
+    text-align: center;
+    margin: 0px 40px 0px 0px;
 }
 .displayScripture {
     line-height: 1.5;
@@ -201,7 +207,7 @@ main {
     background-color: white;
     width: 65%;
     margin: 20px auto;
-    padding: 10px;
+    padding: 0px;
 }
 
 /* .information{
