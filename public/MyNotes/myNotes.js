@@ -24,13 +24,12 @@ function getNotesbyId(){
 }
 
 function displayNotes(data) {
-    // console.log();
     // $('.js_username').html(data.user);
 
     for (let i = 0; i < data.length; i++) {
         $('.js_rows').append(`
         <tr class ='note_row'>
-            <td><a href="./view_note.html?id=${data[i].id}">${data[i].topic}</a></td>
+            <td><a href="../../viewNote/view_note.html?id=${data[i].id}">${data[i].topic}</a></td>
             <td>${data[i].passage.book}</td>
             <td>${data[i].passage.chapter}:${data[i].passage.verse}</td>
             <td><button id="edit_button" data-edit=${data[i].id}>Edit</button></td>
@@ -45,7 +44,7 @@ function editNotes(){
     $('.js_rows').on('click', '#edit_button', function(event){
         let buttoniD = $(event.target).data('edit');
         console.log(`${BASE_URL}${NOTES_URL}/${buttoniD}`);
-        window.location = `${BASE_URL}/edit_note.html?id=${buttoniD}`;
+        window.location = `${BASE_URL}/edit_notes/edit_note.html?id=${buttoniD}`;
     });
 }
 

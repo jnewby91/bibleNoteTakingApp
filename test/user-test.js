@@ -173,5 +173,24 @@ describe('BibleNotes API for Users', function () {
         })
     })
 
+    describe('DELETE endpoint', function (){
+        it('should delete User ', function(){
+            let user; 
+            return User
+            .findOne()
+            .then(function (_user){
+                user = _user; 
+                return chai.request(app).delete(`/users/${user.id}`);        
+            })
+            .then(function (res) {
+                expect(res).to.have.status(204); 
+                return User.findById(user.id);            
+            })
+            .then(function(_user){
+                expect(_user).to.be.null;
+            })
+        })
+    })
+
 })
 

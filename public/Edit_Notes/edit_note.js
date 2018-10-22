@@ -76,7 +76,7 @@ function changeNote(){
                 console.log(data);
 
                 console.log(window.location);
-                window.location = './my_notes.html'; 
+                window.location = '../MyNotes/my_notes.html'; 
         }
     });
 });
