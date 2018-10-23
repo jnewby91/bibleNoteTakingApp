@@ -44,7 +44,7 @@ function editNotes(){
     $('.js_rows').on('click', '#edit_button', function(event){
         let buttoniD = $(event.target).data('edit');
         console.log(`${BASE_URL}${NOTES_URL}/${buttoniD}`);
-        window.location = `${BASE_URL}/edit_notes/edit_note.html?id=${buttoniD}`;
+        window.location = `${BASE_URL}/Edit_Notes/edit_note.html?id=${buttoniD}`;
     });
 }
 
