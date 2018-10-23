@@ -16,6 +16,18 @@ header {
 
 }
 
+#icon {
+    height: 50px;
+    width: 50px;
+    transform: skewX(10);
+    position: relative;
+    left: 80px;
+    top: 15px;
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+}
+
+
 /* header {
     font-family: 'Homemade Apple', cursive;
     box-shadow: 6px 12px 10px -2px grey;
