@@ -62,7 +62,7 @@ function signupForSite() {
             },
             success: function (data) {
                 console.log(data);
-                window.location = './sign_in.html' ;
+                window.location = '..sign_in.html' ;
             }
         })
 

@@ -15,8 +15,19 @@ header {
     width: 65%;
 }
 
+#icon {
+    height: 50px;
+    width: 50px;
+    transform: skewX(10);
+    position: relative;
+    left: 80px;
+    top: 15px;
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+}
+
 nav {
-    background-color: silver;
+    background-color: #8B848C;
     width: 65%;
     margin: 0px auto;
 }
@@ -74,7 +85,7 @@ h3{
 }
 
 li {
-    font-size: 20px;
+    font-size: 14px;
     display: inline;
     margin: 30px;
     padding: 0px;
