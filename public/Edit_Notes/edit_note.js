@@ -47,6 +47,7 @@ function changeNote(){
         let params = (new URL(window.location.href)).searchParams;
     
         let notesId = params.get('id');
+        console.log('i heard this click');
         console.log(notesId);
         let newURL = `http://${BASE_URL}${NOTES_URL}/${notesId}`;
         console.log(newURL);

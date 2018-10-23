@@ -29,7 +29,7 @@ function displayNotes(data) {
     for (let i = 0; i < data.length; i++) {
         $('.js_rows').append(`
         <tr class ='note_row'>
-            <td><a href="../viewNote/view_note.html?id=${data[i].id}">${data[i].topic}</a></td>
+            <td><a href="../ViewNote/view_note.html?id=${data[i].id}">${data[i].topic}</a></td>
             <td>${data[i].passage.book}</td>
             <td>${data[i].passage.chapter}:${data[i].passage.verse}</td>
             <td><button id="edit_button" data-edit=${data[i].id}>Edit</button></td>
