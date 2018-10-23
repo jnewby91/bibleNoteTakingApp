@@ -28,7 +28,7 @@ function logintoSite() {
             success: function (data) {
                 console.log(data);
                 localStorage.setItem('jwtToken', data.jwtToken);
-                window.location = '../MyNotes/my_notes.html';
+                window.location ='../MyNotes/my_notes.html';
             }
         })
     });
