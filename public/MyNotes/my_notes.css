@@ -73,7 +73,7 @@ li {
 }
 
 a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -131,7 +131,6 @@ th {
     top: 220px;
     left: 250px;
     font-size: 18px;
-    color: rgb(68, 139, 197);
     /* margin: 0px 0px 0px 0px; */
 }
 
@@ -195,7 +194,7 @@ p{
 
 main {
     background-color: white;
-    width: 80%;
+    width: 70%;
     margin: 20px auto;
     padding: 10px;
 }
