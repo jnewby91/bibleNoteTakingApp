@@ -24,6 +24,9 @@ function logintoSite() {
             }),
             error: function (a, b, c) {
                 console.log(a, b, c)
+
+                $('.js-error').text(c); 
+                
             },
             success: function (data) {
                 console.log(data);
