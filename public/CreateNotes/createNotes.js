@@ -37,7 +37,7 @@ function createNotes() {
             },
             success: function (data) {
                 console.log(data);
-                window.location = '../mynotes/my_notes.html';
+                window.location = '../MyNotes/my_notes.html';
             }
         })
 
