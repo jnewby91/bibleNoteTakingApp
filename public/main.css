@@ -15,6 +15,15 @@ header {
     width: 65%;
 }
 
+
+.js-error {
+    color: white;
+    /* margin: 0px auto; */
+    position: relative;
+    bottom: 150px;
+    left: 90px;
+}
+
 #icon {
     height: 50px;
     width: 50px;

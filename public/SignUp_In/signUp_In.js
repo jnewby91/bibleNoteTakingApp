@@ -24,8 +24,13 @@ function logintoSite() {
             }),
             error: function (a, b, c) {
                 console.log(a, b, c)
+                if(a.statusText === 'Bad Request'){
+                    $('.js-error').html('UserName or Password is Incorrect. Try Again.')
+                }
 
-                $('.js-error').text(c); 
+                if(a.statusText === 'Unauthorized'){
+                    $('.js-error').html('UserName or Password is Incorrect. Try Again');
+                }
                 
             },
             success: function (data) {

@@ -72,13 +72,20 @@ button{
     height: 50px;
 }
 
-sign_up a {
+.sign_up a {
     color: black;
     text-decoration: none;
     /* text-align: center; */
     margin: 0px 0px 0px 150px;
 }
 
+.js-error {
+    color: white;
+    /* margin: 0px auto; */
+    position: relative;
+    bottom: 150px;
+    left: 90px;
+}
 a {
     color: black;
     text-decoration: none;
