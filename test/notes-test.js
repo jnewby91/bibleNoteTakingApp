@@ -12,7 +12,7 @@
 // const {TEST_DATABASE_URL} = require('../config.js');
 
 // const {app, runServer, closeServer} = require("../server.js");
-// const {Note} = require('../models.js');
+// const {Note, User} = require('../models.js');
 // const expect = chai.expect;
 
 // chai.use(chaiHttp);
@@ -27,10 +27,10 @@
 //     return Note.insertMany(seedData);
 // }
 
-// function generateNotesData(){
+// function generateNotesData(data){
 //     return {
 //         topic: faker.lorem.word(),
-//         user: faker.internet.userName(), 
+//         user: data._id, 
 //         passage: {
 //             book: faker.lorem.word(),
 //             chapter: faker.random.number(),
@@ -40,6 +40,30 @@
 //     }
 // }
 
+// function seedUserData(){
+//     console.info('seeding user data');
+//     return User
+//     .create(generateUserData())
+//     .then(user => {
+//         let userNote = generateNotesData(user); 
+//         return Note
+//         .create(userNote)
+//     })
+//     .catch(err => {
+//         console.error(err); 
+//         throw(err);
+//      })
+// }
+
+// function generateUserData(){
+//     return {
+//         firstName: faker.name.firstName(),
+//         lastName: faker.name.lastName(), 
+//         userName: faker.internet.userName(),
+//         email: faker.internet.email(),
+//         password: faker.internet.password()
+//     }
+// }
 // function teardownDb(){
 //     console.warn('Deleting database');
 //     return mongoose.connection.dropDatabase();
@@ -52,11 +76,11 @@
 //     })
 
 //     beforeEach(function(){
-//          seedNotesData(); 
+//          seedUserData(); 
 //     })
 
 //     after(function(){
-//         closeServer(TEST_DATABASE_URL); 
+//         closeServer(); 
 //     })
 
 //     after(function(){
@@ -64,7 +88,7 @@
 
 //     })
  
-//     describe('GET endpoint', function(){
+//    xdescribe ('GET endpoint', function(){
         
 //         it('should get all notes', function(){
 //             let res;
@@ -74,7 +98,7 @@
 //                     res = _res; 
 //                     expect(res).to.have.status(200); 
 //                     expect(res.body).to.have.length.of.at.least(1); 
-//                     return Note.count(); 
+//                     return Note.find().count(); 
 //                 })
 //                 .then(function (count) {
 //                     expect(res.body).to.have.lengthOf(count)

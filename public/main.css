@@ -7,6 +7,7 @@ body {
 }
 header {
     margin: 0px auto;
+    text-align: center;
     /* border-bottom: 1px solid #8B848C; */
     /* height: 49px; */
     /* padding: 0px; */
@@ -14,14 +15,13 @@ header {
     background-color: white;
     width: 65%;
 }
-
-
 .js-error {
     color: white;
     /* margin: 0px auto; */
     position: relative;
-    bottom: 150px;
-    left: 90px;
+    /* bottom: 150px; */
+    /* left: 90px; */
+    text-align: center;
 }
 
 #icon {
@@ -111,7 +111,7 @@ a:hover{
 
 ul {
     text-align: center;
-    margin: 0px 40px 0px 0px;
+    margin: 0px 5px 0px 0px;
 }
 .displayScripture {
     line-height: 1.5;
@@ -181,7 +181,7 @@ th {
     height: 400px;
     width: 400px;
     border: 1px solid #000;
-    margin: 200px auto;
+    margin: 100px auto;
     padding: 10px 10px 10px 10px;
     background-color: white;
 }
@@ -228,6 +228,13 @@ main {
     width: 65%;
     margin: 20px auto;
     padding: 0px;
+}
+
+ @media only screen and (max-width: 568px){
+    header{
+        max-width: 100%;
+
+    }
 }
 
 /* .information{

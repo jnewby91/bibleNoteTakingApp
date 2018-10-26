@@ -4,6 +4,28 @@ const NOTES_URL = '/notes';
 const USERS_URL = '/users';
 
 
+
+function currentUsername() { 
+    const token = localStorage.getItem('jwtToken');
+    console.log(token); 
+    console.log(`${BASE_URL + USERS_URL}/me`)
+$.ajax({
+    dataType: 'json',
+    headers: { Authorization: `Bearer ${token}`},
+    method: "GET",
+    //how do I get the id of the user sent in
+    url:  `${BASE_URL + USERS_URL}/me` ,
+    contentType: "application/json", 
+    success: (data) => {
+        console.log(data);
+        $('.js_username').text(data.username);
+    },
+    error: function (a, b, c) {
+        console.log(a, b, c)
+    }
+});
+}
+
 function getNotesbyId(){
     const token = localStorage.getItem('jwtToken');
     $.ajax({
@@ -17,7 +39,11 @@ function getNotesbyId(){
                 console.log(data);
                 displayNotes(data);
                 // displayNotes(data); 
+            },
+            error: function (a, b, c) {
+                console.log(a, b, c)
             }
+
 
     })
 
@@ -81,6 +107,7 @@ function deleteNote(){
 }
 
 $(function (){
+    currentUsername();
     getNotesbyId();
     deleteNote();
     editNotes();

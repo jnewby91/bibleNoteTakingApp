@@ -83,8 +83,9 @@ button{
     color: white;
     /* margin: 0px auto; */
     position: relative;
-    bottom: 150px;
-    left: 90px;
+    /* bottom: 150px; */
+    /* left: 90px; */
+    text-align: center;
 }
 a {
     color: black;

@@ -11,6 +11,7 @@ header {
     /* height: 49px; */
     /* padding: 0px; */
     color: #59505b;
+    text-align: center;
     background-color: white;
     width: 100%;
 }
@@ -93,13 +94,13 @@ a:hover{
 }
 
 .more_notes a{
-    color: white;
+    color: black;
 }
 .more_notes a:hover{
     color: #A46A3F;
 }
 ul {
-    text-align: right;
+    text-align: center;
     margin: 10px 40px 0px 0px;
 }
 .displayScripture {
@@ -125,8 +126,8 @@ ul {
 .my_notes {
     width: max-content;
     height: min-content;
-    margin: 30px auto;
-    /* padding: 10px 10px 10px 20px; */
+    margin: 10px auto;
+    padding: 10px 10px 10px 20px;
 }
 
 table {
@@ -144,11 +145,12 @@ th {
 
 .more_notes {
     /* bottom: -18px; */
-    position: relative;
-    top: 220px;
-    left: 250px;
-    font-size: 18px;
+    /* position: relative; */
+    /* top: 220px; */
+    /* left: 250px; */
+    /* font-size: 18px; */
     /* margin: 0px 0px 0px 0px; */
+    /* text-align: center; */
 }
 
 .sign_up {
@@ -215,6 +217,100 @@ main {
     margin: 20px auto;
     padding: 10px;
 }
+
+
+
+@media
+	  only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+      th tr {
+        position: absolute; 
+        top: -9999px; 
+        left: -9999px;
+      }
+      
+      tr{
+        margin: 0 0 1rem 0;
+      }
+      
+      tr:nth-child(odd){
+        background: silver; 
+      }
+      td{
+        border:none; 
+        border-bottom: 1px solid #eee; 
+        position: relative; 
+        padding-left: 50%;
+      }
+      		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+      td:nth-of-type(1):before { content: "Topic"; }
+		td:nth-of-type(2):before { content: "Book"; }
+		td:nth-of-type(3):before { content: "Chapter:Verse"; }
+		td:nth-of-type(4):before { content: "Edit Note"; }
+		td:nth-of-type(5):before { content: "Delete Note"; }
+
+        /* CSS FOR MOBILE SCREENS */
+
+@media only screen and (min-width:568px) {
+    main{
+        max-width: 70%;
+    }    
+    h1{
+        text-align: center;
+        margin: 0px 0px 0px 0px;
+    }
+    #icon {
+    height: 50px;
+    width: 50px;
+    transform: skewX(10);
+    position: relative;
+    left: 6px;
+    top: 18px;
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+}
+    #icon {
+        height: 50px;
+        width: 50px;
+        transform: skewX(10);
+        position: relative;
+        left: 6px;
+        top: 18px;
+        padding: 0;
+        margin: 0px 0px 0px 0px;
+    }
+    .more_notes {
+        bottom: -18px;
+        position: relative;
+        /* top: 220px; */
+        /* left: 250px; */
+        /* font-size: 18px; */
+        /* margin: 0px 0px 0px 0px; */
+    }
+    
+}
+
+}
+
+
+
+
+
 
 /* .information{
     width: 100%; 

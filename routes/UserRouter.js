@@ -7,10 +7,21 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const {DATABASE_URL, PORT} = require('../config');
+const {
+    DATABASE_URL,
+    PORT
+} = require('../config');
+const {
+    jwtPassportMiddleware
+} = require('../auth/strategies');
+const {
+    User
+} = require('../models');
 
-const {User} = require('../models');
 
+router.get('/me', jwtPassportMiddleware, (req, res) => {
+    res.json({"username": req.user.userName}); 
+});
 
 
 router.get('/', (req, res) => {
@@ -42,7 +53,7 @@ router.get('/:id', (req, res) => {
         .then(users => res.json(users.serialize()))
         .catch(err => {
             console.error(err);
-            rest.status(500).json({
+            res.status(500).json({
                 error: 'something went wrong'
             });
         });
@@ -60,18 +71,18 @@ router.post('/', (req, res) => {
     }
 
     User
-    .hashPassword(req.body.password)
-    .then(password => {
-        return User
-            .create({
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                userName: req.body.userName,
-                email: req.body.email,
-                password: password
+        .hashPassword(req.body.password)
+        .then(password => {
+            return User
+                .create({
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    userName: req.body.userName,
+                    email: req.body.email,
+                    password: password
+                })
+                .then(user => res.status(201).json(user.serialize()))
         })
-        .then(user => res.status(201).json(user.serialize()))
-    }) 
         .catch(err => {
             console.error(err);
             res.status(500).json({
@@ -130,18 +141,23 @@ router.put('/:id', (req, res) => {
         })
         .catch(err => {
             console.error(err);
-            res.status(500).json({error: 'Something Went Wrong'});
+            res.status(500).json({
+                error: 'Something Went Wrong'
+            });
         })
 })
 
 router.delete('/:id', (req, res) => {
     User
-    .findByIdAndRemove(req.params.id)
-    .then(() => {
-        console.log(`Deleted the user with id ${req.params.id}`);
-        res.status(204).end(); 
-    })
+        .findByIdAndRemove(req.params.id)
+        .then(() => {
+            console.log(`Deleted the user with id ${req.params.id}`);
+            res.status(204).end();
+        })
 
 });
 
-module.exports = router; 
+
+
+
+module.exports = router;
