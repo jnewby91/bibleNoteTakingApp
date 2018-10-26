@@ -3,13 +3,13 @@ The Bible Note App gives user the ability to keep track of bible reflections for
 
 ## Screenshots
 Home Page
-![Home Page](Screenshots/Home Page.PNG)
+![Home Page](Screenshots/HomePage.PNG)
 
 Sign In Page
-![Sign-In Page](Screenshots/Sign-In Page.PNG)
+![Sign-In Page](Screenshots/Sign-InPage.PNG)
 
 View Note Page
-![View Note Page](Screenshots/View Note Page.PNG)
+![View Note Page](Screenshots/ViewNotePage.PNG)
 
 
 
