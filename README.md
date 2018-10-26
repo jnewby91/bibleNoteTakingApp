@@ -9,7 +9,7 @@ Sign In Page
 ![Sign-In Page](Screenshots/Sign-InPage.PNG)
 
 View Note Page
-![View Note Page](Screenshots/ViewNotePage.PNG)
+![ViewNote Page](Screenshots/ViewNotePage.PNG)
 
 
 
