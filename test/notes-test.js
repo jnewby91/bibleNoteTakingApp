@@ -72,23 +72,24 @@
 // describe('Bible Notes API for Notes', function() {
     
 //     before(function(){ 
-//         runServer(TEST_DATABASE_URL); 
-//     })
+//        return runServer(TEST_DATABASE_URL); 
+//     });
 
 //     beforeEach(function(){
-//          seedUserData(); 
-//     })
+//        return  seedUserData(); 
+//     });
+
+//     afterEach(function(){
+//        return teardownDb(); 
+//     });
 
 //     after(function(){
-//         closeServer(); 
-//     })
+//        return closeServer(TEST_DATABASE_URL); 
+//     });
 
-//     after(function(){
-//         teardownDb(); 
-
-//     })
+   
  
-//    xdescribe ('GET endpoint', function(){
+//    describe ('GET endpoint', function(){
         
 //         it('should get all notes', function(){
 //             let res;
