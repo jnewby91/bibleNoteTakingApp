@@ -75,7 +75,7 @@ ul {
 }
 
 .note_Form {
-    width: 70%;
+    width: 40%;
     margin: 0 auto;
     padding: 20px 0px 0px 50px;
 }
@@ -181,7 +181,7 @@ main {
 }
 
 button {
-    margin: 15px 150px;
+    margin: 15px;
     display: block;
     width: 100px;
     height: 50px;

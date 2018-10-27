@@ -61,10 +61,10 @@ ul {
 }
 
 .note_Form {
-    width: 70%;
+    width: 100%;
     /* border: 1px solid #000; */
-    margin: 0 auto;
-    padding: 20px 0px 0px 50px;
+    margin: 10px auto;
+    padding: 10px 25px;
 }
 
 .note_Form label {
@@ -168,10 +168,27 @@ main {
 }
 
 button {
-    margin: 15px 150px;
+    margin: 15px;
     display: block;
     width: 100px;
     height: 50px;
+}
+
+@media only screen and (min-width: 769px){
+    .note_Form {
+        width: 70%;
+        /* border: 1px solid #000; */
+        margin: 10px auto;
+        padding: 10px 25px;
+    }
+
+    main {
+        background-color: white;
+        /* width: max-content; */
+        margin: 10px auto;
+        padding: 0px;
+        width: 50%;
+    }
 }
 
 /* .information{
