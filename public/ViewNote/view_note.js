@@ -16,9 +16,7 @@ const USERS_URL = '/users';
 
 function viewNote(){
     const token = localStorage.getItem('jwtToken');
-    console.log('this is the url of the page you are on:' + window.location.href);
     let params = (new URL(window.location.href)).searchParams;
-    console.log('this is what params is:' + params );
 
     let notesId = params.get('id');
     let newURL =`${BASE_URL}${NOTES_URL}${notesId}`;
@@ -27,13 +25,10 @@ function viewNote(){
         dataType: 'json',
         headers: { Authorization: `Bearer ${token}`},
         method: "GET",
-        //how do I get the id of the user sent in
         url: newURL,
         contentType: "application/json", 
         success: (data) => {
-            console.log(data);
             displayNotes(data);
-            // displayNotes(data); 
          }
     })
 }
@@ -46,8 +41,6 @@ function displayNotes(data) {
     $('.js_reflections').html(data.reflection)
  }
  
-
-    // $('.js_rows').append()
 
 
 

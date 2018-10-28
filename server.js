@@ -1,5 +1,4 @@
 require('dotenv').config();
-// console.log(process.env);
 
 const express = require('express');
 const app = express();
@@ -85,9 +84,6 @@ function closeServer() {
 if (require.main === module) {
     runServer(DATABASE_URL).catch(err => console.error(err));
 }
-
-// console.log('Listening to Port 8080');
-// app.listen(process.env.PORT || 8080);
 
 module.exports = {
     runServer,

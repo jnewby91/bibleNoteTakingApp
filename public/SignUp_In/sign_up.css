@@ -7,9 +7,6 @@ body {
 
 header {
     margin: 0px;
-    /* border-bottom: 1px solid #8B848C; */
-    /* height: 49px; */
-    /* padding: 0px; */
     color: #59505b;
     background-color: white;
     width: 100%;
@@ -37,7 +34,6 @@ li {
 
 .sign_up {
     width: 30%;
-    /* border: 1px solid #000; */
     margin: 200px auto;
     padding: 40px;
     background-color: white;
@@ -46,10 +42,8 @@ li {
 h2 {
     font-family: 'Cinzel', serif;
     text-shadow: 0px 0.2px;
-    /* text-decoration-line: underline; */
     text-align: center;
     line-height: 1.5px;
-    /* float: right; */
 }
 
 form {
@@ -57,7 +51,6 @@ form {
 }
 
 .sign_up label {
-    /* text-decoration-line: underline; */
     line-height: 1.5;
     font-size: 22px;}
 
@@ -75,16 +68,12 @@ button{
 .sign_up a {
     color: black;
     text-decoration: none;
-    /* text-align: center; */
     margin: 0px 0px 0px 150px;
 }
 
 .js-error {
     color: white;
-    /* margin: 0px auto; */
     position: relative;
-    /* bottom: 150px; */
-    /* left: 90px; */
     text-align: center;
 }
 a {

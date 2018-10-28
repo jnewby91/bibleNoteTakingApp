@@ -13,7 +13,6 @@ function createNotes() {
         const verse = $('form').find('#verse').val();
         const reflection = $('form').find('#topic').val();
         const token = localStorage.getItem('jwtToken');
-        /* Need to know how to pass in radio button values*/
 
         $.ajax({
             dataType: 'json',
@@ -29,7 +28,6 @@ function createNotes() {
                     verse: verse,
                 },
                 reflection: reflection,
-                //do I need to change to a boolean 
                 visibility: "true",
             }),
             error: function (a, b, c) {

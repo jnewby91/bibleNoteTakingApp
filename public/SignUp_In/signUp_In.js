@@ -5,14 +5,9 @@ const AUTH_URL = '/auth/login';
 
 function logintoSite() {
     $('.sign_in form').submit(function () {
-        console.log('I hear you');
         event.preventDefault();
         const user = $('form').find('#signIn_userName').val();
         const pass = $('form').find('#signIn_password').val();
-        // $.post(AUTH_URL, JSON.stringify({username: 'jnewby12', password: 'something'}), function(data){
-        //     console.log(data);
-        // }
-
         $.ajax({
             dataType: 'json',
             method: "POST",
@@ -23,7 +18,6 @@ function logintoSite() {
                 password: pass
             }),
             error: function (a, b, c) {
-                console.log(a, b, c)
                 if(a.statusText === 'Bad Request'){
                     $('.js-error').html('UserName or Password is Incorrect. Try Again.')
                 }
@@ -34,7 +28,6 @@ function logintoSite() {
                 
             },
             success: function (data) {
-                console.log(data);
                 localStorage.setItem('jwtToken', data.jwtToken);
                 window.location ='../MyNotes/my_notes.html';
             }
@@ -50,8 +43,6 @@ function signupForSite() {
         const fName = $('form').find('#signUpFirstName').val();
         const lName = $('form').find('#signUpLastName').val();
         const password = $('form').find('#signUpPassword').val();
-        console.log(email);
-        console.log(username);
 
         $.ajax({
             dataType: 'json',
@@ -66,10 +57,9 @@ function signupForSite() {
                 password: password,
             }),
             error: function (a, b, c) {
-                console.log(a, b, c)
+
             },
             success: function (data) {
-                console.log(data);
                 window.location = './sign_in.html' ;
             }
         })

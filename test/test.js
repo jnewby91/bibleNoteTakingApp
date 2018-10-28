@@ -109,7 +109,6 @@ describe('BibleNotes API for Users', function () {
                     return User.findById(resUser.id);
                     })
                 .then(function (user) {
-                    // console.log('this is user:', user);
                     expect(user.id).to.equal(resUser.id);
                     expect(user.userName).to.equal(resUser.username);
                     expect(`${user.firstName} ${user.lastName}`).to.equal(resUser.name);
@@ -146,14 +145,12 @@ describe('BibleNotes API for Users', function () {
             const updateData = {
                 email: 'sallymaine@mailinator.com',
                 userName: 'smaine20',
-                // password: 'constant'
             };
 
             return User
             .findOne()
             .then(function (user) {
                 updateData.id = user.id; 
-                console.log(updateData.id);
 
                 return chai.request(app)
                     .put(`/users/${user.id}`)
@@ -168,7 +165,6 @@ describe('BibleNotes API for Users', function () {
             .then(function (user) {
                 expect(user.email).to.equal(updateData.email);
                 expect(user.userName).to.equal(updateData.userName); 
-                // expect(user.password).to.equal(updateData.password);
             })
         })
     })

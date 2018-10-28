@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// app.use(bodyParser.json());
-// app.use(morgan('short'));
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -25,7 +23,6 @@ router.get('/', jwtPassportMiddleware, (req, res) => {
             user: req.user.id
         })
         .then(notes => {
-            // console.log(notes);
             res.json(notes.map(note =>
                 note.serialize()));
         })
@@ -41,7 +38,6 @@ router.get('/:id', jwtPassportMiddleware, (req, res) => {
     Note
         .findById(req.params.id)
         .then(notes => {
-            console.log('it ran this: ' + notes);
             res.json(
                 notes.serialize())
         })
@@ -83,9 +79,6 @@ router.post('/', jwtPassportMiddleware, (req, res) => {
         });
 });
 
-
-//Ask Alex opinion on how PUT should be constructed. Should I have 
-//a parameter blocking if each user 
 
 router.put('/:id', jwtPassportMiddleware, (req, res) => {
     if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {

@@ -7,9 +7,6 @@ body {
 }
 header {
     margin: 0px;
-    /* border-bottom: 1px solid #8B848C; */
-    /* height: 49px; */
-    /* padding: 0px; */
     color: #59505b;
     background-color: white;
     width: 100%;
@@ -26,7 +23,6 @@ h1 {
 
 .image {
     margin: 15px auto;
-    /* border: 1px solid #000; */
     width: 95%;
     height: 400px;
     background-image: url(https://images.unsplash.com/photo-1443140570159-279cf334cf24?ixlib=rb-0.3.5…EyMDd9&s=9d90aef…&auto=format&fit=crop&w=1932&q=80);
@@ -36,7 +32,6 @@ h1 {
 h2{
     font-family: 'Cinzel', serif;
     text-shadow: 0px 0.2px;
-    /* text-decoration-line: underline; */
     text-align: center;
     line-height: 1.5px;
     /* float: right; */
@@ -75,9 +70,9 @@ ul {
 }
 
 .note_Form {
-    width: 100%;
-    margin: 10px auto;
-    padding: 10px 25px;
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px 0px 0px 50px;
 }
 
 .note_Form label {
@@ -89,7 +84,6 @@ ul {
     width: 55%;
     height: 500px;
     margin: 30px auto;
-    /* padding: 10px 10px 10px 20px; */
 }
 
 table {
@@ -106,13 +100,11 @@ th {
 }
 
 .more_notes {
-    /* bottom: -18px; */
     position: relative;
     top: 220px;
     left: 250px;
     font-size: 18px;
     color: rgb(68, 139, 197);
-    /* margin: 0px 0px 0px 0px; */
 }
 
 .sign_up {
@@ -175,8 +167,9 @@ p{
 
 main {
     background-color: white;
-    margin: 10px auto;
-    padding: 0px;
+    width: 65%;
+    margin: 20px auto;
+    padding: 10px;
 }
 
 button {
@@ -185,76 +178,4 @@ button {
     width: 100px;
     height: 50px;
 }
-
-@media only screen and (min-width: 769px){
-    .note_Form {
-        width: 70%;
-        /* border: 1px solid #000; */
-        margin: 10px auto;
-        padding: 10px 25px;
-    }
-
-    main {
-        background-color: white;
-        /* width: max-content; */
-        margin: 10px auto;
-        padding: 0px;
-        width: 50%;
-    }
-}
-
-/* .information{
-    width: 100%; 
-    padding: 25px;
-    border-bottom: 1px solid silver;
-
-} */
-
-/* .information p {
-    line-height: 1.4;
-    padding: 0px;
-    margin: 51px 50px 50px auto;
-    width: 54%;
-    position: relative;
-}
-
-.information2{
-    width: 100%; 
-    padding: 25px;
-}
-
-.information2 p {
-    line-height: 1.4;
-    padding: 20px;
-    /* margin: 24px 47px 0px auto; */
-    /* width: 25%; */
-    /* height: unset; */
-    /* position: relative;
-}
-.information2 h2 {
-    float: left;
-    margin: 20px 20px 0px 40px;
-}
-.sampleImage2 {
-    float: right;
-    border: 1px solid #000;
-    width: 35%;
-    height: 200px;
-    margin: 0px 10px 0px 20px;
-}
-.sampleImage {
-    float: left;
-    border: 1px solid #000;
-    width: 35%;
-    height: 200px;
-    margin: 0px 10px 0px 20px;
-}
-.information h2 {
-    float: right;
-    margin: 20px 20px 0px 40px;
-} */ 
-
-
-
-
 

@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// router.use(bodyParser.json());
-// router.use(morgan('short'));
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -25,13 +23,10 @@ router.get('/me', jwtPassportMiddleware, (req, res) => {
 
 
 router.get('/', (req, res) => {
-    console.log(DATABASE_URL);
     User
         .find({})
         .then(users => {
-            console.log(users);
             res.json(users.map(user => {
-                console.log(user);
                 return {
                     id: user.id,
                     username: user.userName,
@@ -95,7 +90,6 @@ router.post('/', (req, res) => {
 
 
 router.put('/:id', (req, res) => {
-    console.log('');
     if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
         res.status(400).json({
             error: 'Request path id and request body id values must match'
@@ -126,7 +120,6 @@ router.put('/:id', (req, res) => {
                     }, {
                         new: true
                     })
-                //ask alex what trueugfb reqpresents 
             }
 
         })
@@ -151,7 +144,6 @@ router.delete('/:id', (req, res) => {
     User
         .findByIdAndRemove(req.params.id)
         .then(() => {
-            console.log(`Deleted the user with id ${req.params.id}`);
             res.status(204).end();
         })
 
