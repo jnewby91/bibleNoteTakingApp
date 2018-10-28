@@ -70,8 +70,8 @@ ul {
 }
 
 .note_Form {
-    width: 40%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 10px auto;
     padding: 20px 0px 0px 50px;
 }
 
@@ -167,9 +167,9 @@ p{
 
 main {
     background-color: white;
-    width: 65%;
-    margin: 20px auto;
-    padding: 10px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 0px;
 }
 
 button {
@@ -179,3 +179,17 @@ button {
     height: 50px;
 }
 
+@media only screen and (min-width: 769px){
+    .note_Form {
+        width: 75%;
+        margin: 10px auto;
+        padding: 10px 25px;
+    }
+
+    main {
+        background-color: white;
+        margin: 10px auto;
+        padding: 0px;
+        width: 50%;
+    }
+}
