@@ -39,10 +39,12 @@ function changeNote(){
     $('.note_Form form').submit(function (event){
         event.preventDefault(); 
         const topic = $('form').find('#topic').val();
+        console.log(topic);
         const book = $('form').find('#book').val();
+        console.log(book);
         const chapter = $('form').find('#chapter').val();
         const verse = $('form').find('#verse').val();
-        const reflection = $('form').find('#topic').val();
+        const reflection = $('form').find('#reflections').val();
         const token = localStorage.getItem('jwtToken');     
         let params = (new URL(window.location.href)).searchParams;
     
@@ -61,12 +63,13 @@ function changeNote(){
             data: JSON.stringify({
                 id: notesId,
                 topic: topic,
+                reflection: reflection,
                 passage: {
                     book: book,
                     chapter: chapter,
                     verse: verse,
                 },
-                reflection: reflection,
+               
                 //do I need to change to a boolean 
                 visibility: "true",
             }),
