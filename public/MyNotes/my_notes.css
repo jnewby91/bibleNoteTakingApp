@@ -179,7 +179,7 @@ p{
 
 main {
     background-color: white;
-    width: 70%;
+    width: 90%;
     margin: 20px auto;
     padding: 10px;
 }
@@ -188,7 +188,7 @@ main {
 
 @media
 	  only screen 
-    and (min-device-width: 320px),(max-width: 760px), (min-device-width: 768px) 
+    and (max-width: 760px), (min-device-width: 768px) 
     and (max-device-width: 1024px)  {
 
 		/* Force table to not be like tables anymore */

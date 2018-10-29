@@ -164,11 +164,14 @@ main {
 }
 
 button {
+    float: left;
     margin: 15px;
     display: block;
     width: 100px;
     height: 50px;
 }
+
+
 
 @media only screen and (min-width: 769px){
     .note_Form {

@@ -44,9 +44,17 @@ function createNotes() {
 
 }
 
+function cancelNote(){
+    $('.note_Form form').on('click', '#cancel', function (){
+        window.location = '../MyNotes/my_notes.html'; 
+
+    })
+}
+
 
 $(function(){
     createNotes();
+    cancelNote();
 }); 
 
 

@@ -86,11 +86,15 @@ function changeNote(){
 });
 }
 
+function cancelNote(){
+    $('.note_Form form').on('click', '#cancel', function (){
+        window.location = '../MyNotes/my_notes.html'; 
 
-
-
+    })
+}
 
 $( function(){
     getNotebyId();
     changeNote();
+    cancelNote(); 
 }); 

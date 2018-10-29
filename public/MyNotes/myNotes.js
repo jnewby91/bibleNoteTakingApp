@@ -66,7 +66,7 @@ function displayNotes(data) {
     };
 }
 
-function editNotes(){
+function editNotes() {
     $('.js_rows').on('click', '#edit_button', function(event){
         let buttoniD = $(event.target).data('edit');
         console.log(`${BASE_URL}${NOTES_URL}/${buttoniD}`);
@@ -106,11 +106,19 @@ function deleteNote(){
     })
 }
 
+function logOut(){
+    $('main').on('click', '#logOut', function () {
+        localStorage.clear(); 
+        window.location = '../index.html';
+    } )
+}
+
 $(function (){
     currentUsername();
     getNotesbyId();
     deleteNote();
     editNotes();
+    logOut();
 })
 
 
