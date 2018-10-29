@@ -11,7 +11,7 @@ function createNotes() {
         const book = $('form').find('#book').val();
         const chapter = $('form').find('#chapter').val();
         const verse = $('form').find('#verse').val();
-        const reflection = $('form').find('#topic').val();
+        const reflection = $('form').find('#reflections').val();
         const token = localStorage.getItem('jwtToken');
 
         $.ajax({

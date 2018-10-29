@@ -63,12 +63,12 @@ function changeNote(){
             data: JSON.stringify({
                 id: notesId,
                 topic: topic,
-                reflection: reflection,
                 passage: {
                     book: book,
                     chapter: chapter,
                     verse: verse,
                 },
+                reflection: reflection,
                
                 //do I need to change to a boolean 
                 visibility: "true",

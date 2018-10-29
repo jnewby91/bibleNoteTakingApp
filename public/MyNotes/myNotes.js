@@ -22,6 +22,9 @@ $.ajax({
     },
     error: function (a, b, c) {
         console.log(a, b, c)
+        if(a.status === 401){
+            window.location = '../index.html';
+        }
     }
 });
 }
