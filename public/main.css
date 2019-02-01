@@ -170,6 +170,20 @@ th {
     margin: 0px 100px 0px 100px;
 }
 
+p.demo.heading {
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    text-align: center;
+    margin: 0px auto;
+    padding: 0px;
+    color: white;
+}
+
+p.demo {
+    color: white;
+    margin: 0px auto;
+}
+
 .displayScripture h2, .note_Form h2{
     float: none;
     display: block;
